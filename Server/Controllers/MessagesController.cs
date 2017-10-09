@@ -45,7 +45,7 @@ namespace Server.Controllers
 
             if (msgHash == null)
             {
-                return NotFound();
+                return NotFound(new { err_msg = "Message not found" });
             }
 
             return Ok(new { message = msgHash.message });

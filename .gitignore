@@ -1,6 +1,5 @@
 bin/
 obj/
 packages/
-wwwroot/
 *.csproj.user
 /.vs

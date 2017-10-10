@@ -2,7 +2,7 @@
   "profiles": {
     "FindPair": {
       "commandName": "Project",
-      "commandLineArgs": "prices.txt 1100"
+      "commandLineArgs": "prices.txt 3500 3"
     }
   }
 }

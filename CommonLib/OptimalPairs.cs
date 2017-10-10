@@ -195,6 +195,19 @@ namespace CommonLib
             {
                 a[i] = l + 1 + i;
             }
+            if(count == a.Length)
+            {
+                yield return a;
+                yield break;
+            }
+            if(count == 1)
+            {
+                foreach(var item in a)
+                {
+                    yield return new int[] { item };
+                }
+                yield break;
+            }
             foreach(var combination in GetCombinations(a, 0, count))
             {
                 yield return combination.ToArray();

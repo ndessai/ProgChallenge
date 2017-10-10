@@ -27,6 +27,15 @@ namespace FindPair
                 Console.WriteLine(args[1] + " is not a valid uint");
                 return;
             }
+            uint friends = 2;
+            if(args.Length == 3)
+            {
+                if(!UInt32.TryParse(args[2], out friends))
+                {
+                    Console.WriteLine(args[2] + " is not a valid uint");
+                    return;
+                }
+            }
             var lines = new List<string>();
             using(var reader = File.OpenText(args[0]))
             {
@@ -40,7 +49,7 @@ namespace FindPair
             var optimalPairs = new OptimalPairs();
             try
             {
-                var items = optimalPairs.Compute(lines, limit);
+                var items = optimalPairs.Compute(lines, limit, friends);
                 foreach(var item in items)
                 {
                     Console.Write(item.Name + " " + item.Price + "     ");

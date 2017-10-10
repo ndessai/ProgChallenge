@@ -1,5 +1,15 @@
 # Programming Challenges
 
+The solution has been hosted on http://progchallenge.azurewebsites.net and it can be tested as follows.
+# 1. For hash testing
+curl -X POST -H "Content-Type: application/json" -d '{"message": "foo"}' http://progchallenge.azurewebsites.net/api/messages
+curl 
+http://progchallenge.azurewebsites.net/api/messages/2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f9
+8a5e886266e7ae
+# 2. For Replace char testing 
+curl http://progchallenge.azurewebsites.net/api/replace/X01X
+
+
 This solution is built in Visual Studio (C#) and the projects are organized as follows.
 
 # 1. Server

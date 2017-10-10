@@ -38,7 +38,7 @@ namespace Server.Controllers
             }
             catch (ArgumentException ex)
             {
-                return BadRequest(ex.ToString());
+                return BadRequest(ex.Message);
             }
             return Ok(result);
         }

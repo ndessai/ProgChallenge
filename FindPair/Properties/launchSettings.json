@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "FindPair": {
+      "commandName": "Project",
+      "commandLineArgs": "prices.txt 1100"
+    }
+  }
+}

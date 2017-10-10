@@ -11,6 +11,26 @@ namespace CommonLib
 
     public class OptimalPairs
     {
+        public List<Item> Compute(List<string> lines, uint limit, uint friends = 2)
+        {
+            var catalog = new List<Item>();
+            foreach(var line in lines)
+            {
+                string[] tokens = line.Split(',');
+                if(tokens.Length != 2)
+                {
+                    throw new ApplicationException("Invalid tokens in input line " + line);
+                }
+                UInt32 price;
+                if(!UInt32.TryParse(tokens[1], out price))
+                {
+                    throw new ApplicationException("Invalid price in line " + line);
+                }
+                catalog.Add(new Item { Name = tokens[0], Price = price });
+            }
+            return Compute(catalog.ToArray(), limit, friends);
+        }
+
         public List<Item> Compute(Item[] catalog, uint limit, uint friends = 2)
         {
             var result = new List<Item>();
@@ -19,7 +39,7 @@ namespace CommonLib
 
             //check for invalid entries
             if(
-                friends > 0 //atleast one item need to be selected
+                friends <= 0 //atleast one item need to be selected
                 || catalog == null //no catalog
                 || catalog.Length <= 0 //empty catalog
                 || catalog.Length < friends // items in catalog are less than friends, DISTINCT not possible
@@ -99,7 +119,6 @@ namespace CommonLib
                         {
                             prevL = l;
                             prevR = r;
-                            continue;
                         }
                         if (totalPrice < limit) l++;
                         else r--;
@@ -132,7 +151,6 @@ namespace CommonLib
                                 prevL = l;
                                 prevR = r;
                                 prevOthers = combination;
-                                continue;
                             }
                         }
                         if (perfectFound)
@@ -153,7 +171,7 @@ namespace CommonLib
                     result.Add(catalog[prevOthers[i]]);
                 }
             }
-            result.Add(catalog[prevL]);
+            result.Add(catalog[prevR]);
             return result;
         }
 

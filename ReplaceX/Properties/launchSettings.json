@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ReplaceX": {
+      "commandName": "Project",
+      "commandLineArgs": "X010X10X0"
+    }
+  }
+}

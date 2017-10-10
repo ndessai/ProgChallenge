@@ -8,7 +8,7 @@ namespace CommonLib
     {
         //Return every possible combination where you replace the X with both 0 and 1
         //throws exception if there is any character other than 1, 0 or X or x (assumption here)
-        List<char[]> Compute(string input)
+        public List<char[]> Compute(string input)
         {
             var prefixes = new List<char[]>();
             var defaultPrefix = new char[input.Length];
@@ -26,7 +26,7 @@ namespace CommonLib
                         prefix[i] = c;
                     }
                 }
-                if (c == 'x' || c == 'X')
+                else if (c == 'x' || c == 'X')
                 {
                     //duplicate all combinations and on half add '1' and other half add '0' at the end
                     var newPrefixes = new List<char[]>();

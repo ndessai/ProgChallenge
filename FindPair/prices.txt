@@ -4,3 +4,15 @@ Detergent, 1000
 Headphones, 1400
 Earmuffs, 2000
 Bluetooth Stereo, 6000
+AB, 7000
+AC, 8400
+AD, 9000
+AE, 9100
+BA, 9200
+BB, 10400
+BC, 12000
+BD, 16000
+BE, 18000
+BF, 18100
+BG, 20000
+BH, 22000

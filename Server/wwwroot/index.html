@@ -71,7 +71,7 @@ window.onload = function() {
             };
             fileDisplayArea.innerText = "Request=>\n" + JSON.stringify(data);
             $.ajax({
-                url: 'http://localhost:53125/api/findpairs',
+                url: '/api/findpairs',
                 type: "POST",
                 contentType: "application/json",
                 dataType: "json",
